@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+*.pyc
+*~
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+myvenv/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# If using migrations and want to ignore migrations files (optional)
+# migrations/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Environment variables
+.env
+
+# Celery stuff
+celerybeat-schedule
+
+# PyCharm
+.idea/
