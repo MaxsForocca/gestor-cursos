@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Inscribir en {{ course.title }}</title></head>
+<body>
+  <h1>Inscribir en {{ course.title }}</h1>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Inscribir</button>
+  </form>
+  <a href="{{ course.get_absolute_url }}">Volver</a>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Confirmar eliminación</title></head>
+<body>
+  <h1>Confirmar eliminación</h1>
+  <p>¿Eliminar {{ object }}?</p>
+  <form method="post">{% csrf_token %}<button type="submit">Sí, eliminar</button></form>
+  <a href="{{ object.get_absolute_url }}">Cancelar</a>
+</body>
+</html>

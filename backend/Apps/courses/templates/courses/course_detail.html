@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>{{ course.title }}</title></head>
+<body>
+  <h1>{{ course.code }} - {{ course.title }}</h1>
+  <p>{{ course.description }}</p>
+  <p>Instructor: {{ course.instructor }}</p>
+  <p>Periodo: {{ course.start_date }} — {{ course.end_date }}</p>
+
+  <a href="{% url 'courses:course-edit' course.pk %}">Editar</a> |
+  <a href="{% url 'courses:course-delete' course.pk %}">Eliminar</a> |
+  <a href="{% url 'courses:course-enroll' course.pk %}">Inscribir estudiante</a> |
+  <a href="{% url 'courses:course-list' %}">Volver</a>
+
+  <h2>Inscripciones</h2>
+  <ul>
+    {% for e in course.enrollments.all %}
+      <li>{{ e.student_name }} — {{ e.student_email }} ({{ e.enrolled_at }})</li>
+    {% empty %}
+      <li>No hay inscripciones.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

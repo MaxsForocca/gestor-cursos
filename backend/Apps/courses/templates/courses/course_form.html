@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Formulario Curso</title></head>
+<body>
+  <h1>{% if form.instance.pk %}Editar curso{% else %}Crear curso{% endif %}</h1>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+  <a href="{% url 'courses:course-list' %}">Cancelar</a>
+</body>
+</html>
